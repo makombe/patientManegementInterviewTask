@@ -37,7 +37,7 @@ import { LocationComponent } from './location/location.component';
 import { EditLocationComponent } from './location/edit-location/edit-location.component';
 import { PatientDemographicsComponent } from './patient-demographics/patient-demographics.component';
 import { CreatePatientComponent } from './create-patient/create-patient.component';
-import { EditDemographicsComponent } from './edit-demographics/edit-demographics.component';
+import { EditDemographicsComponent } from './patient-demographics/edit-demographics/edit-demographics.component';
 import { DisplayErrorComponent } from './display-error/display-error.component';
 import { PatientListComponent } from './patient-list.component';
 import { ReportSummaryComponent } from './repoorts/patient-report.component';

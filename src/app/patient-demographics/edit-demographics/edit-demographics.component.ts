@@ -1,7 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {PatientService} from '../patient.service';
-import {PatientResourceService} from '../patient-resource.service';
+import {PatientService} from '../../patient.service';
+import {PatientResourceService} from '../../patient-resource.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-edit-demographics',
@@ -24,11 +25,14 @@ export class EditDemographicsComponent implements OnInit {
     { label: 'Female', val: 'F' },
     { label: 'Male', val: 'M' }
   ];
+  private _datePipe: DatePipe;
 
   constructor(private patientService: PatientService,
               private router: Router,
               private route: ActivatedRoute,
-              private patientResourceService: PatientResourceService) { }
+              private patientResourceService: PatientResourceService) {
+    this._datePipe = new DatePipe('en-US');
+  }
 
   ngOnInit() {
     this.getDemographicsToEdit();
@@ -39,7 +43,8 @@ export class EditDemographicsComponent implements OnInit {
         if (data) {
           this.name = data.name;
           this.gender = data.gender;
-          this.birth_date = data.birth_date;
+          this.birth_date  = this._datePipe.transform(
+            data.birth_date, 'yyyy-MM-dd');
           this.selectedPersonId = data.person_id;
         }
 
