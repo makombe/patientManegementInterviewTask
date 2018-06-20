@@ -157,11 +157,10 @@ export class PatientListComponent implements OnInit {
     }
   }
   public openNextOfKinListDialog(v) {
-    this.selectedPatientId = v.person_id;
     this.patientName = v.name;
+    this.selectedPatientId = v.person_id;
     this.patientResourceService.getPatientNextOfKinList(this.selectedPatientId).subscribe(
       (result) => {
-        console.log('result', result);
         this.nextOfKinList = result;
       });
     this.displayNextOfKinDialog = true;

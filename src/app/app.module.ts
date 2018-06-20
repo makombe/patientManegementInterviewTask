@@ -44,7 +44,7 @@ import { ReportSummaryComponent } from './repoorts/patient-report.component';
 import { DeletedPatientComponent } from './repoorts/deleted-patient-list.component';
 import { PatientByAgeCohortComponent } from './repoorts/patient-by-age-cohort.component';
 import { NouisliderModule } from 'ng2-nouislider';
-import {EditNextOfKinComponent} from './next-kin/edit-next-kin/edit-next-of-kin.component';
+import { EditNextOfKinComponent } from './next-kin/edit-next-kin/edit-next-of-kin.component';
 
 
 
@@ -55,7 +55,6 @@ import {EditNextOfKinComponent} from './next-kin/edit-next-kin/edit-next-of-kin.
     FormsModule,
     HttpModule,
     RouterModule,
-   // AppRoutingModule,
     AccordionModule, DataTableModule, SharedModule, TabViewModule,
     GrowlModule, PanelModule, ConfirmDialogModule,
     DialogModule, InputTextModule, MessagesModule, InputTextareaModule,
