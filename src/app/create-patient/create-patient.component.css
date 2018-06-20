@@ -1,3 +1,13 @@
+
+FIELDSET {
+  margin: 8px;
+  border: 1px solid silver;
+  padding: 8px;
+  border-radius: 4px;
+}
+LEGEND{
+  padding: 2px;
+}
 .component-wrapper {
   margin: 8px;
   position: relative;

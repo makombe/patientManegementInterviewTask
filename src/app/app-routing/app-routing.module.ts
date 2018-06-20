@@ -1,19 +1,45 @@
-import { AdminDashboard2Component } from './../admin/admin-dashboard2/admin-dashboard2.component';
-import { AdminDashboard1Component } from './../admin/admin-dashboard1/admin-dashboard1.component';
+
 import { StarterComponent } from './../starter/starter.component';
-import { AdminComponent } from './../admin/admin.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { PatientSearchComponent } from '../patient-search/patient-search.component';
+import { PatientInfoComponent } from '../patient-info/patient-info.component';
+import { CreatePatientComponent } from '../create-patient/create-patient.component';
+import { PatientListComponent } from '../patient-list.component';
+import { ReportSummaryComponent } from '../repoorts/patient-report.component';
 
-@NgModule({
-  imports: [
-    RouterModule.forRoot([
-      { path: '', redirectTo: 'starter', pathMatch: 'full' },
-      { path: 'starter', component: StarterComponent },
-    ])
-  ],
-  declarations: [],
-  exports: [ RouterModule]
-})
-export class AppRoutingModule { }
+export const routes = [
+
+  {
+    path: 'starter',
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'starter'
+      },
+      { path: '', component: StarterComponent },
+    ]
+  },
+  {path: 'patient-infor', component: PatientInfoComponent},
+  {
+    path: 'create-patient',
+    children: [
+      {path: '', component: CreatePatientComponent}
+    ]
+  },
+  {
+    path: 'patient-list-cohort',
+    children: [
+      {path: '', component: PatientListComponent}
+    ]
+  },
+  {
+    path: 'app-report-summary',
+    children: [
+      {path: '', component: ReportSummaryComponent}
+    ]
+  }
+  //
+];
